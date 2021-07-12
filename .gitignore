@@ -138,3 +138,4 @@ dmypy.json
 cython_debug/
 Archive/genome_scores.csv.zip
 train.csv
+Archive/train.csv.zip
