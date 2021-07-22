@@ -111,7 +111,7 @@ def main():
         st.title("Solution Overview")
         st.write("Our recommender engine can be utilized in a variety of areas including movies, music, news, books or e-commerce products. Our data scientists help you to set up the right scenarios to fit your domain specific use cases")
         st.image("person.jpg")
-        st.image("Pic1.jpg")      
+        st.image("Pic1.JPG")      
     
     if page_selection == "Exploratory Data Analysis":
         st.title("Exploratory Data Analysis")
@@ -202,7 +202,7 @@ def main():
         st.image("Tyrone.jpg")
 
         st.write("JACQUES STANDER")
-        st.image("Jacques.jpg", width=300)
+        st.image("Jacques.JPG", width=300)
 
         st.write("KHOMOTSO MAAKE")
         st.image("Khomotso.jpg", width=300)
