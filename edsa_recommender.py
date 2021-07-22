@@ -151,12 +151,12 @@ def main():
 
         df1 = pd.read_csv("resources/data/ratings.csv")
         st.header("The Ratings (Train) dataset")
-        st.write("Displaying the first few entries in the movie dataset")
+        st.write("Displaying the first few entries in the ratings dataset")
         st.write(df1)
 
 
-        if st.checkbox("Check to see the shape of the Ratings Dataset"):
-            data_dim1 = st.radio("Show Dimensions By ", ("Rows", "Columns"))
+        if st.checkbox("Check to display the shape of the Ratings Dataset"):
+            data_dim1 = st.radio("Show Dimensions by ", ("Rows", "Columns"))
             if data_dim1 == 'Rows':
                 st.text("Number of Rows")
                 st.write(df1.shape[0])
@@ -164,7 +164,7 @@ def main():
                 st.text("Number of Columns")
                 st.write(df1.shape[1])
             else:
-                st.write(df1.shape)
+                st.write(df1.shape[0])
 
         if st.checkbox("Check to see specific columns "):
             all_columns = df1.columns.tolist()
