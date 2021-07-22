@@ -114,16 +114,18 @@ def main():
         st.image("pic1.jpg")      
     
     if page_selection == "Exploratory Data Analysis":
-        st.title("Let us explore our movie and ratings datasets")
+        st.title("Exploratory Data Analysis")
+        st.write("This page was designed to help data analysts to get a better understanding of the data. It focuses specifically on the movies and ratings datasets.")
+        st.header("The Movies dataset")
         df = pd.read_csv('resources/data/movies.csv')
         st.write("Displaying the first few entries in the movie dataset")
         st.write(df)
         
-        st.write("Let's check some basic statistics")
+        st.write("Displaying basic statistics about the movieId column.")
         st.write(df.describe())
 
         # show shape
-        if st.checkbox("Shape of Movies Dataset"):
+        if st.checkbox("Check to display the shape of the Movies Dataset"):
             data_dim = st.radio("Show Dimensions By ", ("Rows", "Columns"))
             if data_dim == 'Row':
                 st.text("Number of Rows")
@@ -132,30 +134,30 @@ def main():
                 st.text("Number of Columns")
                 st.write(df.shape[1])
             else:
-                st.write(df.shape)
+                st.write(df.shape[0])
 
-        if st.checkbox("Select specific Columns to show"):
+        if st.checkbox("Check to see specific columns"):
             all_columns = df.columns.tolist()
             selected_columns = st.multiselect("Select", all_columns)
             new_df = df[selected_columns]
             st.dataframe(new_df)
 
         # Show values
-        if st.button("Value Counts for Movies Dataset"):
-            st.text("Value Counts By Target/Class")
+        if st.button("Display the amount of movies for each genre"):
+            st.text("The amount of movies by genre.")
             st.write(df.iloc[:,-1].value_counts())
 
         
 
         df1 = pd.read_csv("resources/data/ratings.csv")
-        st.title("Let's explore our movie ratings information")
-        st.write("The below shows the first few entries in the ratings dataset")
+        st.header("The Ratings (Train) dataset")
+        st.write("Displaying the first few entries in the movie dataset")
         st.write(df1)
 
 
-        if st.checkbox("Shape of the Ratings Dataset"):
+        if st.checkbox("Check to see the shape of the Ratings Dataset"):
             data_dim1 = st.radio("Show Dimensions By ", ("Rows", "Columns"))
-            if data_dim1 == 'Row':
+            if data_dim1 == 'Rows':
                 st.text("Number of Rows")
                 st.write(df1.shape[0])
             elif data_dim1 == 'Columns':
@@ -164,22 +166,22 @@ def main():
             else:
                 st.write(df1.shape)
 
-        if st.checkbox("Select Columns to show"):
+        if st.checkbox("Check to see specific columns "):
             all_columns = df1.columns.tolist()
-            selected_columns = st.multiselect("Select", all_columns)
+            selected_columns = st.multiselect("Select one or more columns to display", all_columns)
             new_df = df1[selected_columns]
             st.dataframe(new_df)
 
         # Show values
-        if st.button("Value Counts for Ratings dataset"):
-            st.text("Value Counts By Target/Class")
-            st.write(df1.iloc[:,-1].value_counts())
+        #if st.button("Value Counts for Ratings dataset"):
+         #   st.text("Value Counts By Target/Class")
+         #   st.write(df1.iloc[:,-1].value_counts())
 
-        st.write("And some basic statistics....")
+        st.write("Displaying basic statistics of the Ratings dataset")
         st.write(df1.describe())
 
 
-        st.write("A look at the ratings distribution")
+        st.write("Displaying the ratings distribution accross all users")
         fig, ax = plt.subplots()
         df1.hist(
         bins=8,
@@ -208,21 +210,12 @@ def main():
         st.write("DIMAKATSO MONGWEGELWA")
         st.image("wasp.jpg", width=300)
 
-        st.write("MELUSI")
+        st.write("MELUSI ZWANE")
         st.image("batman.jpg",width=300)
 
-        st.write("REFILO DHLAMINI")
+        st.write("REFILOE DHLAMINI")
         st.image("ref.jpg", width=300)
-        
-        
-
-
-        
-
-        
-         
-
-
+     
 
     # You may want to add more sections here for aspects such as an EDA,
     # or to provide your business pitch.
